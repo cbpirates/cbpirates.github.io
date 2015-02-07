@@ -1,28 +1,19 @@
-{% for post in site.posts %}
-  {% if post.status == 'down' %}
-    {% assign has_down = true %}
-    {% assign culprit = {{post.status_text}} %}
-    {% break %}
-  {% elsif post.status == 'partial' %}
-  	{% assign has_partial = true %}
-  	{% assign culprit = {{post.status_text}} %}
-  	{% break%}
-  {% endif %}
-{% endfor %}
+{% assign culprit = "RDS Connectivity Issue" %}
+{% assign down_status = "down" %}
 
-{% if has_down == true %}
+{% if down_status == "down" %}
   <section class="cb-status-banner down">
 	<div class="container text-center">
 		<h1>{{culprit}}</h1>
 	</div>
 </section>
-{% elsif has_partial == true %}
+{% elsif down_status == "partial" %}
   <section class="cb-status-banner partial">
 	<div class="container text-center">
 		<h1>{{culprit}}</h1>
 	</div>
 </section> 
-  {% else %}
+{% else %}
   <section class="cb-status-banner up">
 	<div class="container text-center">
 		<h1>All systems operational</h1>
