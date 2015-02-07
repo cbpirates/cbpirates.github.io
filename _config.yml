@@ -1,0 +1,7 @@
+# Site settings
+title: ChargeBee Status
+
+# Build settings
+markdown: kramdown
+permalink: /:title
+

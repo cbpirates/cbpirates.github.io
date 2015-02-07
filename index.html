@@ -1,1 +1,28 @@
-Hello WORLD
+---
+layout: ping
+---
+
+{% include _statusbanner.html %}
+
+<section class="cb-status-timeline container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        {% for post in site.posts %}
+		{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+		{% if count == '1' %}
+      		<h3 class="page-header">Recent Status History</h3>
+		<ol>
+		{% endif %}
+          <li>
+            <span class="number"></span>
+            <h4>{{ post.title }}</h4>
+            <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            <p>{{ post.content }}</p>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+
+{% include _pingdom.html %}
