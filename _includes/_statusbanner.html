@@ -1,16 +1,16 @@
-{% assign culprit = "RDS Connectivity Issue" %}
-{% assign down_status = "up" %}
+{% assign cb_status = "partial" %}
+{% assign reason = "RDS Network Connectivity Issue" %}
 
-{% if down_status == "down" %}
+{% if cb_status == "down" %}
   <section class="cb-status-banner down">
 	<div class="container text-center">
-		<h1>{{culprit}}</h1>
+		<h1>{{reason}}</h1>
 	</div>
 </section>
-{% elsif down_status == "partial" %}
+{% elsif cb_status == "partial" %}
   <section class="cb-status-banner partial">
 	<div class="container text-center">
-		<h1>{{culprit}}</h1>
+		<h1>{{reason}}</h1>
 	</div>
 </section> 
 {% else %}
