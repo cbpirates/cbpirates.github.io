@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "False Downtime Indication"
-status: down
+status: "down"
 status_text: False Downtime Indication
 ---
 
